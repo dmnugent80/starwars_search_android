@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0A0000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#515151</color>
+    <color name="swLight">#FFE5C0</color>
+    <color name="swOrange">#FFA72B</color>
+    <color name="swOrange2">#DD852F</color>
+    <color name="swBlue">#17A694</color>
+    <color name="swRed">#FF3C5C</color>
+    <color name="swRed2">#E05B37</color>
+    <color name="swSilver">#8e8d8d</color>
+    <color name="swYellow">#EECB5F</color>
+
+</resources>

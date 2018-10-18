@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5"
+    android:background="@color/swLight"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:minHeight="122dp">
+
+        <EditText
+            android:id="@+id/search_text"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            />
+
+        <ImageButton
+            android:id="@+id/search_button"
+            android:scaleType="fitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/search_text"
+            android:layout_centerVertical="true"
+            android:cropToPadding="false"
+            android:layout_marginStart="10dp"
+            android:elevation="4dp"
+            android:background="@drawable/baseline_search_black_24">
+        </ImageButton>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/movie_recycler_view"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:id="@+id/initial_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_moon_one"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/movie_error_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/baseline_cloud_off_black_48"/>
+
+            <com.starwars.starwarssearch.FontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="18sp"
+                android:textColor="@color/swRed"
+                android:text="@string/error_text"
+                custom:typefaceAsset="fonts/DeathStar.otf"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/no_results_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.starwars.starwarssearch.FontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="18sp"
+                android:textColor="@color/swRed"
+                android:text="@string/no_results_text"
+                custom:typefaceAsset="fonts/DeathStar.otf"/>
+
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

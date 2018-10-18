@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".FilmActivity">
+
+    <RelativeLayout
+        android:id="@+id/film_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.starwars.starwarssearch.FontTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="9dp"
+            tools:text="The Empire Strikes Back"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="22sp"
+            android:textColor="@color/swOrange"
+            custom:typefaceAsset="fonts/DeathStar.otf"/>
+
+        <ImageView
+            android:id="@+id/iv_c3"
+            android:layout_below="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/ic_c3po"/>
+
+        <TableLayout
+            android:id="@+id/layout_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_c3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginTop="12dp">
+
+            <TableRow>
+                <com.starwars.starwarssearch.FontTextView
+                    android:id="@+id/tv_release_date_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/swSilver"
+                    android:text="@string/release_date"
+                    android:layout_marginEnd="4dp"
+                    custom:typefaceAsset="fonts/DeathStar.otf" />
+
+                <com.starwars.starwarssearch.FontTextView
+                    android:id="@+id/tv_release_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/swSilver"
+                    android:layout_marginStart="4dp"
+                    tools:text="1980-05-17"
+                    custom:typefaceAsset="fonts/DeathStar.otf" />
+            </TableRow>
+
+            <TableRow>
+                <com.starwars.starwarssearch.FontTextView
+                    android:id="@+id/tv_director_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/swSilver"
+                    android:text="@string/director"
+                    android:layout_marginEnd="4dp"
+                    custom:typefaceAsset="fonts/DeathStar.otf" />
+
+                <com.starwars.starwarssearch.FontTextView
+                    android:id="@+id/tv_director"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/swSilver"
+                    android:layout_marginStart="4dp"
+                    tools:text="Irvin Kershner"
+                    custom:typefaceAsset="fonts/DeathStar.otf" />
+            </TableRow>
+
+            <TableRow>
+                <com.starwars.starwarssearch.FontTextView
+                    android:id="@+id/tv_producer_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/swSilver"
+                    android:text="@string/producer"
+                    android:layout_marginEnd="4dp"
+                    custom:typefaceAsset="fonts/DeathStar.otf" />
+
+                <com.starwars.starwarssearch.FontTextView
+                    android:id="@+id/tv_producer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/swSilver"
+                    android:layout_marginStart="4dp"
+                    tools:text="Gary Kurtz, Rick McCallum"
+                    custom:typefaceAsset="fonts/DeathStar.otf" />
+            </TableRow>
+
+        </TableLayout>
+
+        <com.starwars.starwarssearch.FontTextView
+            android:id="@+id/tv_crawl"
+            android:layout_below="@+id/layout_data"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:textSize="14sp"
+            android:textColor="@color/swOrange"
+            custom:typefaceAsset="fonts/DeathStar.otf"
+            tools:text="It is a dark time for the\r\nRebellion. Although the Death\r\nStar has been destroyed,\r\nImperial troops have driven the\r\nRebel forces from their hidden\r\nbase and pursued them across\r\nthe galaxy.\r\n\r\nEvading the dreaded Imperial\r\nStarfleet, a group of freedom\r\nfighters led by Luke Skywalker\r\nhas established a new secret\r\nbase on the remote ice world\r\nof Hoth.\r\n\r\nThe evil lord Darth Vader,\r\nobsessed with finding young\r\nSkywalker, has dispatched\r\nthousands of remote probes into\r\nthe far reaches of space...."/>
+
+        <ProgressBar
+            android:id="@+id/loading_progress"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:elevation="5dp"
+            android:background="@drawable/shape_progress_circle_background"
+            android:indeterminate="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:theme="@style/ProgressTheme" />
+
+    </RelativeLayout>
+
+</ScrollView>
