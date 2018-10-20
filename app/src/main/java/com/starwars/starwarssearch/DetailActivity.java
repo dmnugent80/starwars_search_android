@@ -51,7 +51,7 @@ public class DetailActivity extends AppCompatActivity implements
 
     @Override
     public void onClick(Film film) {
-        launchFilmActivity(film.mUrl);
+        launchFilmActivity(film);
     }
 
     @Override
@@ -114,9 +114,9 @@ public class DetailActivity extends AppCompatActivity implements
         }
     }
 
-    private void launchFilmActivity(String url) {
+    private void launchFilmActivity(Film film) {
         Intent filmIntent = new Intent(DetailActivity.this, FilmActivity.class);
-        filmIntent.putExtra(FilmSearchManager.FILM_URL_EXTRA, url);
+        filmIntent.putExtra(FilmActivity.FILM, film);
         startActivity(filmIntent);
     }
 
